@@ -6,9 +6,19 @@ public class Mover : MonoBehaviour
 {
     public float speed = 10.0f;
 
+    private Vector2 startPosition;
+    private Rigidbody2D rb;
+
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0.0f);
+        rb = GetComponent<Rigidbody2D>();
     }
+
+    public void Initialize()
+    {
+        startPosition = transform.position;
+        rb.velocity = transform.up * speed;
+    }
+
 }
