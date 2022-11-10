@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    //FixedUpdate ties the speed to a 50-times-per-second timer rather then the framerate
+    void FixedUpdate()
     {
         float horiz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
