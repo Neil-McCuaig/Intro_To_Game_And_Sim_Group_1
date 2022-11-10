@@ -2,32 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotation : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    private float move;
-    public float moveSpeed;
-
-    private float rotation;
-    public float rotateSpeed;
+    [SerializeField] float speed = 5.0f;
+    private Rigidbody2D rb;
 
     public GameObject p1bullet, bulletSpawn;
     public float fireRate = 0.75f;
-
-    private Rigidbody2D rBody;
     private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = 5f;
-        rotateSpeed = 50f;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        move = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-        rotation = Input.GetAxis("Horizontal") * -rotateSpeed * Time.deltaTime;
+        float hrz = Input.GetAxis("Horizontal");
+        float ver = Input.GetAxis("Vertical");
+
+        Vector2 newVelocity = new Vector2(hrz, ver);
+        rb.velocity = newVelocity * speed;
+
+        Vector2 moveDirection = gameObject.GetComponent<Rigidbody2D>().velocity;
+        if (moveDirection != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(moveDirection.x, -moveDirection.y) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
 
         //Add bullet fire code
         //Check if the Player 1 Fire button is pressed
@@ -44,11 +48,5 @@ public class Rotation : MonoBehaviour
         }
 
         timer += Time.deltaTime;
-    }
-
-    private void LateUpdate()
-    {
-        transform.Translate(0f, move, 0f);
-        transform.Rotate(0f, 0f, rotation);
     }
 }
