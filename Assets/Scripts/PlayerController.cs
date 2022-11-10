@@ -19,8 +19,7 @@ public class PlayerController : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    //FixedUpdate ties the speed to a 50-times-per-second timer rather then the framerate
+    //FixedUpdate ties the speed to a 50-times-per-second timer rather than the framerate
     void FixedUpdate()
     {
         float horiz = Input.GetAxis("Horizontal");
