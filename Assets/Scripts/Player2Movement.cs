@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player2Movement : MonoBehaviour
 {
     [SerializeField] float speed = 5.0f;
     private Rigidbody2D rb;
 
-    public GameObject p1bullet, bulletSpawn;
+    public GameObject p2bullet, p2bulletSpawn;
     public float fireRate = 0.75f;
     private float timer = 0;
 
@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float hrz = Input.GetAxis("P1Horizontal");
-        float ver = Input.GetAxis("P1Vertical");
+        float hrz = Input.GetAxis("P2Horizontal");
+        float ver = Input.GetAxis("P2Vertical");
 
         Vector2 newVelocity = new Vector2(hrz, ver);
         rb.velocity = newVelocity * speed;
@@ -36,12 +36,12 @@ public class PlayerMovement : MonoBehaviour
         //Add bullet fire code
         //Check if the Player 1 Fire button is pressed
 
-        if (Input.GetAxis("P1Fire") > 0 && timer > fireRate)
+        if (Input.GetAxis("P2Fire") > 0 && timer > fireRate)
         {
             //If yes, spawn the bullet
 
             GameObject gObj;
-            gObj = GameObject.Instantiate(p1bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+            gObj = GameObject.Instantiate(p2bullet, p2bulletSpawn.transform.position, p2bulletSpawn.transform.rotation);
 
             //Reset timer
             timer = 0;
