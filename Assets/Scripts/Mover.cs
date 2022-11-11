@@ -4,19 +4,33 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    public float speed = 10.0f;
-    private Vector2 startPosition;
+    public int speed = 10;
+    public Vector2 direction;
+    public float lifetime = 5f;
     private Rigidbody2D rb;
-
-    // Start is called before the first frame update
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        // Get RigidBody
+        rb = gameObject.GetComponent<Rigidbody2D>();
 
-        startPosition = transform.position;
-        //rb.velocity = transform.right * speed;
+        // Add Force
+        rb.AddForce(direction.normalized * speed);
+
+        // Add Velocity
         rb.velocity = new Vector2(speed, 0.0f);
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        // Decrease the timer
+        lifetime -= Time.deltaTime;
+
+        if (lifetime <= 0f)
+        {
+            // When timer runs out, destroy the bullet
+            Destroy(gameObject);
+        }
+    }
 }

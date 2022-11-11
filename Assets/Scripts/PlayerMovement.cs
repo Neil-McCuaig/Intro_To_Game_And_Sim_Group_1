@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     public GameObject p1bullet, bulletSpawn;
-    public float fireRate = 0.75f;
+    public float fireRate = 1f;
     private float timer = 0;
 
     // Start is called before the first frame update
