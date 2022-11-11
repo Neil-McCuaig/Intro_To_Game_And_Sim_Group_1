@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    public int speed = 10;
-    public Vector2 direction;
+    public float speed = 10.0f;
+    private Vector2 direction;
     public float lifetime = 5f;
     private Rigidbody2D rb;
 
