@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mover : MonoBehaviour
+public class BulletMover : MonoBehaviour
 {
     public float speed = 10.0f;
     private Vector2 startPosition;
@@ -14,7 +14,7 @@ public class Mover : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
-        rb.velocity = transform.up * speed;
+        rb.velocity = transform.right * speed;
     }
 
 }
