@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
         Vector2 newVelocity = new Vector2(hrz, ver);
         rb.velocity = newVelocity * speed;
 
+        //Tank moves in the direction of the movement key that is pressed
+
         Vector2 moveDirection = gameObject.GetComponent<Rigidbody2D>().velocity;
         if (moveDirection != Vector2.zero)
         {
