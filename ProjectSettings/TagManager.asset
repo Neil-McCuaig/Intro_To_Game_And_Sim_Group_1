@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Objects
+  - Player2
+  - Player1
+  - p2bullet
+  - p1bullet
   layers:
   - Default
   - TransparentFX
@@ -11,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
@@ -43,4 +48,13 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 706179891
+    locked: 0
+  - name: Objects
+    uniqueID: 3388483049
+    locked: 0
+  - name: Player
+    uniqueID: 2512315347
+    locked: 0
+  - name: UI
+    uniqueID: 3118104195
     locked: 0

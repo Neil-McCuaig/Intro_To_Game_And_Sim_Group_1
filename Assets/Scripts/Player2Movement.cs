@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player2Movement : MonoBehaviour
 {
@@ -9,7 +12,12 @@ public class Player2Movement : MonoBehaviour
 
     public GameObject p2bullet, p2bulletSpawn;
     public float fireRate = 0.75f;
+
     private float timer = 0;
+
+    //keep score by tracking player 1 hits on this game object (player 2)
+    private int player1Score = 0;
+    public TextMeshProUGUI player1ScoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -48,5 +56,19 @@ public class Player2Movement : MonoBehaviour
         }
 
         timer += Time.deltaTime;
+    }
+
+    public void Player1Goal()
+    {
+        player1Score++;
+        player1ScoreText.text = player1Score.ToString();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "p1bullet") //if bullet hits
+        {
+            Player1Goal(); //add 1 to player 1 score
+        }
     }
 }

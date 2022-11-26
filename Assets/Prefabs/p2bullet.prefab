@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1159688845413464586}
   - component: {fileID: 4465648401836204604}
   - component: {fileID: 5790287582842278777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: p2bullet
-  m_TagString: Untagged
+  m_TagString: p2bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1782651949
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ff906b9425959364397b4c2f160d9a9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -118,7 +118,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 2485828904388743059}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: af2d3f0829d9e994fbd7ff95aca707f2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -138,6 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  scoreManager: {fileID: 0}
+  explosion: {fileID: 5253336401162157308, guid: f51641fe7fabba24fa84179ad471619a, type: 3}
 --- !u!82 &5790287582842278777
 AudioSource:
   m_ObjectHideFlags: 0
@@ -148,9 +150,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e3eef5460c1408e4faeec14d6ad06391, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: af8ee948d48a773428bd37c0a9641515, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
