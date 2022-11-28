@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 37820305}
-  - component: {fileID: 37820306}
   m_Layer: 6
   m_Name: ShootingPoint
   m_TagString: Untagged
@@ -155,102 +154,6 @@ Transform:
   m_Father: {fileID: 1042021574}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
---- !u!82 &37820306
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37820304}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e3eef5460c1408e4faeec14d6ad06391, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: -1
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &51656909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -654,7 +557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 866538866273064216, guid: e02485d03e4a7bf41b7ee2594945057a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.62
+      value: 9.27
       objectReference: {fileID: 0}
     - target: {fileID: 866538866273064216, guid: e02485d03e4a7bf41b7ee2594945057a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2127,15 +2030,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6123190288120293812, guid: 0a46086bf1f15e64bb4320dadeebd701, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.45
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 6123190288120293812, guid: 0a46086bf1f15e64bb4320dadeebd701, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.76
+      value: 10.44
       objectReference: {fileID: 0}
     - target: {fileID: 6123190288120293812, guid: 0a46086bf1f15e64bb4320dadeebd701, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.71
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 6123190288120293812, guid: 0a46086bf1f15e64bb4320dadeebd701, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2465,7 +2368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 932337642766614678, guid: e581a98be5b398047b6e6994467fc3ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.44
+      value: 3.46
       objectReference: {fileID: 0}
     - target: {fileID: 932337642766614678, guid: e581a98be5b398047b6e6994467fc3ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2591,7 +2494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042021572}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -7.87, y: 2.63, z: 0}
+  m_LocalPosition: {x: -9.52, y: 2.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2945,7 +2848,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222558178}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 7.96, y: -3.95, z: 0}
+  m_LocalPosition: {x: 9.55, y: -3.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3953,7 +3856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 866538866273064216, guid: e02485d03e4a7bf41b7ee2594945057a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.64
+      value: -9.27
       objectReference: {fileID: 0}
     - target: {fileID: 866538866273064216, guid: e02485d03e4a7bf41b7ee2594945057a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5993,15 +5896,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6123190288120293812, guid: 0a46086bf1f15e64bb4320dadeebd701, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.45
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 6123190288120293812, guid: 0a46086bf1f15e64bb4320dadeebd701, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.77
+      value: -10.47
       objectReference: {fileID: 0}
     - target: {fileID: 6123190288120293812, guid: 0a46086bf1f15e64bb4320dadeebd701, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.74
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 6123190288120293812, guid: 0a46086bf1f15e64bb4320dadeebd701, type: 3}
       propertyPath: m_LocalPosition.z
