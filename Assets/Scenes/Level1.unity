@@ -2599,7 +2599,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 1682724233}
   fireRate: 0.75
   player2ScoreText: {fileID: 418935511}
-  highestScore: 1
+  highestScore: 2
 --- !u!114 &1042021581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2959,6 +2959,7 @@ MonoBehaviour:
   p2bulletSpawn: {fileID: 1531194177}
   fireRate: 0.75
   player1ScoreText: {fileID: 838783645}
+  highestScore: 2
 --- !u!114 &1222558184
 MonoBehaviour:
   m_ObjectHideFlags: 0

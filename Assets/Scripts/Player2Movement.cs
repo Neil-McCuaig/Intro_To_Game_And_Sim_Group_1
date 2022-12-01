@@ -72,7 +72,7 @@ public class Player2Movement : MonoBehaviour
     {
         if (player1Score == highestScore)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 
