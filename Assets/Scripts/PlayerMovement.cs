@@ -16,8 +16,12 @@ public class PlayerMovement : MonoBehaviour
     private float timer = 0;
 
     //keep score by tracking player 2 hits on this game object (player 1)
+
     private int player2Score = 0;
     public TextMeshProUGUI player2ScoreText;
+
+    //define highest possible score to check for end of game
+    public int highestScore;
 
     // Start is called before the first frame update
     void Start()
@@ -64,14 +68,23 @@ public class PlayerMovement : MonoBehaviour
     {
         player2Score++;
         player2ScoreText.text = player2Score.ToString();
+        ScoreCheck();
+    }
+
+    private void ScoreCheck()
+    {
+        if (player2Score == highestScore)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "p2bullet") //if bullet hits
         {
-            Debug.Log("Player 1 Hit");
-            Debug.Log("Player 2 scores point");
+            //Debug.Log("Player 1 Hit");
+            //Debug.Log("Player 2 scores point");
             Player2Goal(); //add 1 to player 2 score
         }
     }

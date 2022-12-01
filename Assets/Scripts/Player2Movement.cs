@@ -19,6 +19,9 @@ public class Player2Movement : MonoBehaviour
     private int player1Score = 0;
     public TextMeshProUGUI player1ScoreText;
 
+    //define highest possible score to check for end of game
+    public int highestScore;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +65,15 @@ public class Player2Movement : MonoBehaviour
     {
         player1Score++;
         player1ScoreText.text = player1Score.ToString();
+        ScoreCheck();
+    }
+
+    private void ScoreCheck()
+    {
+        if (player1Score == highestScore)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
