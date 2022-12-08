@@ -88,8 +88,13 @@ public class Player2Movement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>() as AudioSource;
+        AudioClip powerUpSound = Resources.Load<AudioClip>("Sounds/Powerup14");
+        AudioClip crateBreakingSound = Resources.Load<AudioClip>("Sounds/crate_breaking");
+
         if (other.CompareTag("PowerUp"))
         {
+            audioSource.PlayOneShot(powerUpSound);
             speed = 3.5f;
             speedBoost = true;
             StartCoroutine(PowerUpCooldown());
@@ -97,6 +102,7 @@ public class Player2Movement : MonoBehaviour
         }
         if (other.CompareTag("Crate"))
         {
+            audioSource.PlayOneShot(crateBreakingSound);
             speed = 3.5f;
             speedBoost = true;
             StartCoroutine(PowerUpCooldown());

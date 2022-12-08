@@ -3144,6 +3144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  speedBoost: 0
   p2bullet: {fileID: 2485828904388743059, guid: 79e46b90c71e612448f4149e3e1bc3bc, type: 3}
   p2bulletSpawn: {fileID: 1531194177}
   fireRate: 0.75
