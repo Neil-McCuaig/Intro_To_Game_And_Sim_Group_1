@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed = 5.0f;
     private Rigidbody2D rb;
 
+    public bool speedBoost; //bool variable for power up cooldown
+
     public GameObject p1bullet, bulletSpawn;
     public float fireRate = 1f;
 
@@ -87,5 +89,23 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("Player 2 scores point");
             Player2Goal(); //add 1 to player 2 score
         }
+    }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Crate"))
+        {
+            speed = 3.5f;
+            speedBoost = true;
+            StartCoroutine(PowerUpCooldown());
+            Destroy(other.gameObject);
+        }
+    }
+
+    IEnumerator PowerUpCooldown()
+    {
+        yield return new WaitForSeconds(10.0f);
+        speedBoost = false;
+        speed = 2.0f;
     }
 }
