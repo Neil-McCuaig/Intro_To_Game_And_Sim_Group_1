@@ -18,6 +18,9 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>() as AudioSource;
+        AudioClip ricochetSound = Resources.Load<AudioClip>("Sounds/ricochet");
+
         if (collision.gameObject.name == "Player2_Blue") //if bullet hits player 2
         {
             //Debug.Log("Player 2 Hit");
@@ -25,12 +28,23 @@ public class Bullet : MonoBehaviour
             Destroy(explosionAnimation, 0.5f);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.tag == "Objects") //if bullet hits gameObjects with the Objects tag
+        if (collision.gameObject.tag == "Objects") //if bullet hits gameObjects with the Objects tag
         {
             //instantiate ricochet sound
-            GetComponent<AudioSource>().Play();
+            audioSource.PlayOneShot(ricochetSound);
             //destroy bullet prefab if it doesn't hit player after 2 seconds
             Destroy(this.gameObject, 2);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>() as AudioSource;
+        AudioClip crateBreakingSound = Resources.Load<AudioClip>("Sounds/crate");
+
+        if (collision.gameObject.tag == "Crate")
+        {
+            audioSource.PlayOneShot(crateBreakingSound);
         }
     }
 }

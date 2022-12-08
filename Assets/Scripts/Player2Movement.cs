@@ -90,7 +90,6 @@ public class Player2Movement : MonoBehaviour
     {
         AudioSource audioSource = gameObject.AddComponent<AudioSource>() as AudioSource;
         AudioClip powerUpSound = Resources.Load<AudioClip>("Sounds/Powerup14");
-        AudioClip crateBreakingSound = Resources.Load<AudioClip>("Sounds/crate_breaking");
 
         if (other.CompareTag("PowerUp"))
         {
@@ -102,7 +101,6 @@ public class Player2Movement : MonoBehaviour
         }
         if (other.CompareTag("Crate"))
         {
-            audioSource.PlayOneShot(crateBreakingSound);
             speed = 3.5f;
             speedBoost = true;
             StartCoroutine(PowerUpCooldown());

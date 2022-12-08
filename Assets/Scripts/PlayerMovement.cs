@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
     {
         AudioSource audioSource = gameObject.AddComponent<AudioSource>() as AudioSource;
         AudioClip powerUpSound = Resources.Load<AudioClip>("Sounds/Powerup14");
-        AudioClip crateBreakingSound = Resources.Load<AudioClip>("Sounds/crate_breaking");
+        AudioClip crateBreakingSound = Resources.Load<AudioClip>("Sounds/crate");
 
         if (other.CompareTag("PowerUp"))
         {

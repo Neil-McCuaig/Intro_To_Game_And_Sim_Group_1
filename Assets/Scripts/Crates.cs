@@ -8,9 +8,8 @@ public class Crates : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "p1bullet" || other.gameObject.tag == "p2bullet")
+        if (other.CompareTag("p1bullet") || other.CompareTag("p2bullet"))
         {
-            GetComponent<AudioSource>().Play();
             GetComponent<SpriteRenderer>().sprite = powerUpSprite; //when crate is broken, change sprite to power up sprite
             transform.gameObject.tag = "PowerUp";
         }
