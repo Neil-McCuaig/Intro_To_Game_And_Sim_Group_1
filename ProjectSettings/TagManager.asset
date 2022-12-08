@@ -9,6 +9,8 @@ TagManager:
   - Player1
   - p2bullet
   - p1bullet
+  - PowerUp
+  - Crate
   layers:
   - Default
   - TransparentFX

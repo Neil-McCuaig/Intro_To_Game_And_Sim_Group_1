@@ -6,9 +6,13 @@ public class Crates : MonoBehaviour
 {
     public Sprite powerUpSprite;
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        GetComponent<AudioSource>().Play();
-        GetComponent<SpriteRenderer>().sprite = powerUpSprite; //when crate is broken, change sprite to power up sprite
+        if (other.gameObject.tag == "p1bullet" || other.gameObject.tag == "p2bullet")
+        {
+            GetComponent<AudioSource>().Play();
+            GetComponent<SpriteRenderer>().sprite = powerUpSprite; //when crate is broken, change sprite to power up sprite
+            transform.gameObject.tag = "PowerUp";
+        }
     }
 }

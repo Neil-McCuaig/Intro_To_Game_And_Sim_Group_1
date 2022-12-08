@@ -93,8 +93,17 @@ public class PlayerMovement : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("PowerUp"))
+        {
+            speed = 3.5f;
+            speedBoost = true;
+            StartCoroutine(PowerUpCooldown());
+            Destroy(other.gameObject);
+        }
         if (other.CompareTag("Crate"))
         {
+            AudioSource source1 = GameObject.FindGameObjectWithTag("Crate").GetComponent<AudioSource>();
+            other.gameObject.GetComponent<AudioSource>().Play();
             speed = 3.5f;
             speedBoost = true;
             StartCoroutine(PowerUpCooldown());
