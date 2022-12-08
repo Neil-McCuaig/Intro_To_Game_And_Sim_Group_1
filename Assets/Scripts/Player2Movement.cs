@@ -91,6 +91,7 @@ public class Player2Movement : MonoBehaviour
         AudioSource audioSource = gameObject.AddComponent<AudioSource>() as AudioSource;
         AudioClip powerUpSound = Resources.Load<AudioClip>("Sounds/Powerup14");
         AudioClip crateBreakingSound = Resources.Load<AudioClip>("Sounds/crate");
+        AudioClip oilSpillSound = Resources.Load<AudioClip>("Sounds/oil");
 
         if (other.CompareTag("PowerUp"))
         {
@@ -107,6 +108,11 @@ public class Player2Movement : MonoBehaviour
             speedBoost = true;
             StartCoroutine(PowerUpCooldown());
             Destroy(other.gameObject);
+        }
+        if (other.CompareTag("OilSpill"))
+        {
+            audioSource.PlayOneShot(oilSpillSound);
+            speed = 0.7f;
         }
     }
 

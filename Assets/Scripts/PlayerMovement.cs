@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     public bool speedBoost; //bool variable for power up cooldown
+    public bool slowDown; //bool variable for oil spill debuff
 
     public GameObject p1bullet, bulletSpawn;
     public float fireRate = 1f;
@@ -54,10 +55,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetAxis("P1Fire") > 0 && timer > fireRate)
         {
+            AudioSource audioSource = gameObject.AddComponent<AudioSource>() as AudioSource;
+            AudioClip bulletFireSound = Resources.Load<AudioClip>("Sounds/shot_fired");
+
             //If yes, spawn the bullet
 
             GameObject gObj;
             gObj = GameObject.Instantiate(p1bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+            audioSource.PlayOneShot(bulletFireSound);
 
             //Reset timer
             timer = 0;
@@ -96,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         AudioSource audioSource = gameObject.AddComponent<AudioSource>() as AudioSource;
         AudioClip powerUpSound = Resources.Load<AudioClip>("Sounds/Powerup14");
         AudioClip crateBreakingSound = Resources.Load<AudioClip>("Sounds/crate");
+        AudioClip oilSpillSound = Resources.Load<AudioClip>("Sounds/oil");
 
         if (other.CompareTag("PowerUp"))
         {
@@ -113,12 +119,25 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(PowerUpCooldown());
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("OilSpill"))
+        {
+            audioSource.PlayOneShot(oilSpillSound);
+            speed = 0.7f;
+            slowDown = true;
+            StartCoroutine(OilSpillCooldown());
+        }
     }
 
     IEnumerator PowerUpCooldown()
     {
         yield return new WaitForSeconds(10.0f);
         speedBoost = false;
+        speed = 2.0f;
+    }
+    IEnumerator OilSpillCooldown()
+    {
+        yield return new WaitForSeconds(1.5f);
+        slowDown = false;
         speed = 2.0f;
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - p1bullet
   - PowerUp
   - Crate
+  - OilSpill
   layers:
   - Default
   - TransparentFX
